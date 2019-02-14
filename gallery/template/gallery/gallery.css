@@ -1,0 +1,21 @@
+#atas {
+    margin-top: 30px;
+}
+
+#gallery { 
+    font-size: 20px;
+}
+
+.kotak {
+    height: 178px;
+    margin: 15px auto;
+    border-radius: 5px;
+    border: 1px solid #EBEBEB;
+}
+
+.materi {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 70px;
+}
