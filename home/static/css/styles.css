@@ -1,0 +1,36 @@
+.navbarhomeposition{
+    height: 30px; 
+}
+
+#topnavbar{
+    background-color: red;
+    padding: 5px;
+}
+
+#a{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:white;
+    font-weight: bold;
+    text-decoration: none;
+}
+.copyright{
+    background-color: black;
+    font-size: 14px;
+    color: white;
+}
+.bigfooter{
+    background-color: #2b2b2b;
+    color:white;
+    font-size: 15px;
+}
+#gambarpostingan{
+    width:auto;
+}
+
+.resize {
+    width: auto; /* you can use % */
+    height: 400px;
+}
+#imgcard{
+    height: 140px;
+}
