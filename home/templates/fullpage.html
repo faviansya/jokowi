@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block konten %}
+<div class="postingan mt-5 mb-5">
+    <div class="container">
+        <h1>{{kontenhome.judul}}</h1>
+
+        <div class="row">
+            <div class="col-sm col-lg-12">
+                <img src="{{kontenhome.gambar.url}}" alt="" id="gambarpostingan">
+            </div>
+            <div class="col-sm col-lg-6">
+                <h2></h2>
+                <p align="justify">{{kontenhome.deskripsi}}</p>
+                <a href="{% url 'home' %}">Kembali Ke Home</a>
+            </div>
+            <div class="col-sm col-lg-4">
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
