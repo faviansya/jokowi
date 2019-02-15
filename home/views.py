@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Posting, YoutubeVideo, Comment
-from .forms import PostForm
+from .forms import PostForm, BeritaForm
 
 
 def home(request):
@@ -38,8 +38,6 @@ def beritalengkap(request):
     return render(request, 'beritalengkap.html', data)
 
 def tambahcomment(request, blog_id):
-    item = Posting.objects.get(id=blog_id) 
-
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
@@ -52,3 +50,20 @@ def tambahcomment(request, blog_id):
         'form': form,
     }
     return render(request, 'formcomment.html', data)
+
+def tambahberita(request):
+    if request.method == 'POST':
+        form = BeritaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('waiting')
+    else:
+        form = BeritaForm()
+    data = {
+        'halamanhome': '/',
+        'form': form,
+    }
+    return render(request, 'tambahberita.html', data)
+
+def WaitingAff(request):
+    return render(request, 'Waiting.html')
