@@ -17,6 +17,10 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
         crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+    <link href="{% static 'css/hover-min.css' %}" rel="stylesheet">
+
     <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/styles.css' %}" />
     <title>Home</title>
 </head>
@@ -32,22 +36,22 @@
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse " id="navbarSupportedContent" style="color:white;">
             <ul class="navbar-nav m-auto ">
                 <li class="nav-item mr-5">
-                    <a class="nav-link" href="{% url 'home' %}">Beranda<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" style="color:white;font-weight: bold;" href="{% url 'home' %}">Beranda<span
+                            class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item mr-5">
-                    <a class="nav-link" href="">Link</a>
+                    <a style="color:white; font-weight: bold;" class="nav-link" href="{% url 'prestasi' %}">Prestasi</a>
                 </li>
                 <li class="nav-item mr-5">
-                    <a class="nav-link" href="{% url 'contact' %}">contact</a>
+                    <a class="nav-link" style="color:white;font-weight: bold;" href="{% url 'contact' %}">Contact</a>
                 </li>
                 <li class="nav-item dropdown mr-5">
                     <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Dropdown
+                        aria-haspopup="true" aria-expanded="false" style="color:white;font-weight: bold;">
+                        Menu
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="">Action</a>
@@ -63,6 +67,14 @@
         {% block konten %}
         {% endblock %}
     </div>
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+        $.each(jQuery('.carousel .item'), function (i, val) {
+            $(this).css('background-image', 'url(' + $(this).find('img').attr('src') + ')').css('background-size', 'cover').find('img').css('visibility', 'hidden');
+        });
+    </script>
 </body>
 <footer>
     <div class="jumbotron jumbotron-fluid bigfooter mb-0">
