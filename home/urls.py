@@ -6,4 +6,5 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('beritalengkap', views.beritalengkap, name='beritalengkap'),
     path('<int:blog_id>', views.lengkap, name='fullpage'),
+    path('<int:blog_id>/comment', views.tambahcomment, name='commentpage'),
 ]
